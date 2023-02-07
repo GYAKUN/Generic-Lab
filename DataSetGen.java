@@ -1,8 +1,8 @@
 package application;
 
-public class DataSetGen<S extends Measurable> {
+public class DataSetGen<T extends Measurable> {
 	 private double sum;
-	   private  S maximum;
+	   private  T maximum;
 	   private int count;
 
 	   /**
@@ -19,7 +19,7 @@ public class DataSetGen<S extends Measurable> {
 	      Adds a data value to the data set.
 	      @param x a data value
 	   */
-	   public void add(S x)
+	   public void add(T x)
 	   {
 	      sum = sum + x.getMeasure();
 	      if (count == 0 || maximum.getMeasure() < x.getMeasure())
@@ -41,7 +41,7 @@ public class DataSetGen<S extends Measurable> {
 	      Gets the largest of the added data.
 	      @return the maximum or 0 if no data has been added
 	   */
-	   public S getMaximum()
+	   public T getMaximum()
 	   {
 	      return maximum;
 	   }
